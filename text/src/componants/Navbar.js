@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import { Outlet, Link } from "react-router-dom";
 
 // import { Link } from "react-router-dom";
 
@@ -7,11 +8,12 @@ export default function Navbar(props) {
   return (
     <div>
       {" "}
+     
       <nav
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#/">
+          <a className="navbar-brand" href="/">
             {props.title}
           </a>
           {/* <Link className="navbar-brand" to="/">
@@ -30,22 +32,24 @@ export default function Navbar(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#/">
+                <a className="nav-link" aria-current="page" href="/">
                   Home
                 </a>
                 {/* <Link className="nav-link" aria-current="page" to="/">
                   Home
                 </Link> */}
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <a className="nav-link" href="/about">
                   {props.abouttext}
                 </a>
-                <Link className="nav-link" to="/about">
+                {/* <Link className="nav-link" to="/about">
                   {props.abouttext}
-                </Link>
-              </li> */}
+                </Link> */}
+              </li>
+            
             </ul>
             {/* <form className="d-flex" role="search">
               <input
@@ -111,6 +115,7 @@ export default function Navbar(props) {
           </div>
         </div>
       </nav>
+    
     </div>
   );
 }

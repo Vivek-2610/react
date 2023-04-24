@@ -1,10 +1,14 @@
 import "./App.css";
 import Navbar from "./componants/Navbar";
-import React, { useState } from "react";
+import React, { useState} from "react";
+// import React, { useState, BrowserRouter ,Routes, Route} from "react";
 import TextForm from "./componants/TextForm";
 import Alert from "./componants/Alert";
 // import About from "./componants/About";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter,Route, Routes } from "react-router-dom";
+import About from "./componants/About";
+
+
 
 function App() {
   const [mode, setMode] = useState("light"); // whether dark mode is enabled or not
@@ -65,7 +69,7 @@ function App() {
   };
   return (
     <>
-      {/* <Router> */}
+    
       {/*<Navbar title="Vivek" abouttext="About text" /> */}
       <Navbar
         title="TextUtils"
@@ -79,23 +83,33 @@ function App() {
       />
 
       <div className="container my-3">
-        {/* <Switch>
-            <Route exact path="/about"> */}
-        {/* <About bc={bc} /> */}
-        {/* </Route>
-            <Route exact path="/"> */}
-        <TextForm
-          showalert={showalert}
-          heading="Enter text to analyze"
-          mode={mode}
-          bc={bc}
-        />
-        {/* </Route>
-          </Switch> */}
-
-        <Alert alert={alert} />
+        <BrowserRouter>
+        <Routes>
+            {/* <Route exact path="about">
+              <About bc={bc} />
+            </Route> */}
+            <Route path="/about" element={<About bc={bc} />} />
+            <Route path="/" element={ <TextForm
+              showalert={showalert}
+              heading="Enter text to analyze"
+              mode={mode}
+              bc={bc}
+            />} />
+            {/* <Route exact path="/">
+            <TextForm
+              showalert={showalert}
+              heading="Enter text to analyze"
+              mode={mode}
+              bc={bc}
+            />
+             </Route> */}
+             </Routes>
+        </BrowserRouter>
+          <Alert alert={alert} />
+        
       </div>
-      {/* </Router> */}
+  
+     
     </>
   );
 }
