@@ -1,8 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { Outlet, Link } from "react-router-dom";
-
-// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -13,9 +10,9 @@ export default function Navbar(props) {
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            {props.title}
-          </a>
+            <a className="navbar-brand" href="/">
+              {props.title}
+            </a>
           {/* <Link className="navbar-brand" to="/">
             {props.title}
           </Link> */}
@@ -47,6 +44,14 @@ export default function Navbar(props) {
                 </a>
                 {/* <Link className="nav-link" to="/about">
                   {props.abouttext}
+                </Link> */}
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/react">
+                  React Componants
+                </a>
+                {/* <Link className="nav-link" to="/react">
+                  React Componants
                 </Link> */}
               </li>
             
@@ -91,11 +96,11 @@ export default function Navbar(props) {
                 className="btn btn-primary btn-circle mx-1"
                 onClick={props.togglemodeblue}
               ></button>
-              <buttonm
+              <button
                 type="button"
                 className="btn btn-success btn-circle mx-1"
                 onClick={props.togglemodegreen}
-              ></buttonm>
+              ></button>
               <button
                 type="button"
                 className="btn btn-danger btn-circle mx-1"
